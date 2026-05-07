@@ -11,18 +11,26 @@ class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("food app")),
+      appBar: AppBar(
+        toolbarHeight: 80,
+        title: Text(
+          "food Category ",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
       body: GridView(
+        padding: EdgeInsets.all(20),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 10,
+          crossAxisCount: 2, //  row mai aane bale items
+          crossAxisSpacing: 20, // Column ke bich ka space (gap)
+          mainAxisSpacing: 20, // row ke bich ka space (gap)
         ),
         children: [
-          for (i = 1 ; i< 20 ; i++)
-              Container(
-                color: Colors.green,
-                child: Text("grid cell "),              ),
+          for (int i = 1; i < 21; i++)
+            Container(
+              color: Colors.green,
+              child: Center(child: Text("grid cell $i ")),
+            ),
         ],
       ),
     );
