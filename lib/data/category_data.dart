@@ -24,7 +24,7 @@ List<CategoryModel> category = [
 
   CategoryModel(
     id: "A4",
-    title: "powerfull  india",
+    title: "P india",
     color: const Color.fromARGB(255, 118, 8, 125),
   ),
 

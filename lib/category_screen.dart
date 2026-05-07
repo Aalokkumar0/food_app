@@ -23,12 +23,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
         padding: EdgeInsets.all(10),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, //  row mai aane bale items
-          crossAxisSpacing: 20, // Column ke bich ka space (gap)
-          mainAxisSpacing: 20, // row ke bich ka space (gap)
+          crossAxisSpacing: 10, // Column ke bich ka space (gap)
+          mainAxisSpacing: 10, // row ke bich ka space (gap)
         ),
         children: List.generate(category.length, (index) {
           return Container(
             padding: EdgeInsets.all(16),
+
             color: category[index].color,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -39,6 +40,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
                       category[index].id,
                       style: TextStyle(color: Colors.white),
                     ),
+
+                    SizedBox(height: 10),
+
                     Text(category[index].title),
                   ],
                 ),
