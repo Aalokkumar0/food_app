@@ -19,19 +19,23 @@ class _CategoryScreenState extends State<CategoryScreen> {
         ),
       ),
       body: GridView(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(10),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, //  row mai aane bale items
           crossAxisSpacing: 20, // Column ke bich ka space (gap)
           mainAxisSpacing: 20, // row ke bich ka space (gap)
         ),
-        children: [
-          for (int i = 1; i < 21; i++)
-            Container(
-              color: Colors.green,
-              child: Center(child: Text("grid cell $i ")),
+        children: List.generate(20, (index) {
+          return Container(
+            color: const Color.fromARGB(255, 13, 43, 21),
+            child: Center(
+              child: Text(
+                "list gen $index",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
-        ],
+          );
+        }),
       ),
     );
   }
